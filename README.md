@@ -68,7 +68,7 @@ flowchart TD
 - REST calls in (HTTP), state changes out as **JSON events over a WebSocket** — using normal REST + JSON.
 - This is the right tool when your app *is* the call logic (e.g. an autodialer deciding who to call, when, and what to do next), rather than just watching/nudging calls Asterisk is already handling.
 - Runs over Asterisk's built-in HTTP server — same one used for WebRTC — configured in `ari.conf` / `http.conf`.
-- **Postman collection:** [Bevatel Dev — ARI collection](https://bevatel-dev.postman.co/workspace/Team-Workspace~b7b81c0f-920e-4f74-8132-1650596fab03/collection/57597740-98b668f3-60a3-4611-a278-79d452d68cff?action=share&source=copy-link&creator=57597740) *(internal — request access if you can't open it)*, or check the copy kept in the repo.
+- **Postman collection:** [ARI collection](https://github.com/OmarHossamEldin/FreePBX-Asterisk-VoIP-Preparation/blob/master/Asterisk%20ARI%20API.postman_collection.json) *(internal — request access if you can't open it)*, or check the copy kept in the repo.
 
 ### Ports
 
