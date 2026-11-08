@@ -1,0 +1,72 @@
+services:
+  db:
+    container_name: freepbx17-asterisk22-db
+    restart: always
+    image: mariadb:10.11
+    environment:
+      MYSQL_ROOT_PASSWORD_FILE: /run/secrets/mysql_root_password
+      MYSQL_USER: freepbxuser
+      MYSQL_PASSWORD_FILE: /run/secrets/freepbxuser_password
+    secrets:
+      - mysql_root_password
+      - freepbxuser_password
+    volumes:
+      - /mnt/storage/database:/var/lib/mysql
+      - ./my.cnf:/etc/mysql/my.cnf:ro
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql:ro
+      - /etc/localtime:/etc/localtime:ro
+    networks:
+      defaultnet:
+        ipv4_address: 172.20.0.10
+
+  freepbx:
+    container_name: freepbx17-asterisk22-freepbx
+    restart: always
+    build:
+      context: ./source
+      dockerfile: Dockerfile
+    image: freepbx:17-asterisk22-opus
+    cap_add:
+      - NET_ADMIN
+    # IMPORTANT: hostname is required for WebRTC to function properly:
+    hostname: freepbx-docker.jsmwebrtc.my.id
+    volumes:
+      - /mnt/storage/recording:/var/spool/asterisk/monitor
+      - /mnt/storage/conf:/etc/asterisk
+      - /mnt/storage/log:/var/log/asterisk
+      - /mnt/storage/agi-bin:/var/lib/asterisk/agi-bin
+      - /etc/localtime:/etc/localtime:ro
+    networks:
+      defaultnet:
+        ipv4_address: 172.20.0.20
+    ports:
+      - "80:80/tcp"
+      - "443:443/tcp"
+      - "8088:8088/tcp"
+      - "8089:8089/tcp"
+      - "50633:50633/tcp"
+      - "50633:50633/udp"
+      - "5060:5060/udp"
+    secrets:
+      - postfix_sasl_passwd
+    depends_on:
+      - db
+
+networks:
+  defaultnet:
+    driver: bridge
+    driver_opts:
+      com.docker.network.bridge.name: freepbxint
+    ipam:
+      driver: default
+      config:
+        - subnet: 172.20.0.0/16
+          gateway: 172.20.0.1
+
+secrets:
+  mysql_root_password:
+    file: mysql_root_password.txt
+  freepbxuser_password:
+    file: freepbxuser_password.txt
+  postfix_sasl_passwd:
+    file: sasl_passwd.txt

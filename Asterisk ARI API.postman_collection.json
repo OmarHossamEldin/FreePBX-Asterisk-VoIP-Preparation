@@ -1,0 +1,3650 @@
+{
+  "info": {
+    "_postman_id": "98b668f3-60a3-4611-a278-79d452d68cff",
+    "name": "Asterisk ARI API",
+    "description": "Generated from ARI Swagger specs",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "57597740",
+    "_collection_link": "https://go.postman.co/collection/57597740-98b668f3-60a3-4611-a278-79d452d68cff?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Applications",
+      "item": [
+        {
+          "name": "GET List all applications.",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/applications",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "applications"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GET Get details of an application.",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/applications/{applicationName}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "applications",
+                "{applicationName}"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST Subscribe an application to a event source.",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"key\": \"value\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/applications/{applicationName}/subscription?eventSource={{eventSource}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "applications",
+                "{applicationName}",
+                "subscription"
+              ],
+              "query": [
+                {
+                  "key": "eventSource",
+                  "value": "{{eventSource}}",
+                  "description": "URI for event source (channel:{channelId}, bridge:{bridgeId}, endpoint:{tech}[/{resource}], deviceState:{deviceName}"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "DELETE Unsubscribe an application from an event source.",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/applications/{applicationName}/subscription?eventSource={{eventSource}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "applications",
+                "{applicationName}",
+                "subscription"
+              ],
+              "query": [
+                {
+                  "key": "eventSource",
+                  "value": "{{eventSource}}",
+                  "description": "URI for event source (channel:{channelId}, bridge:{bridgeId}, endpoint:{tech}[/{resource}], deviceState:{deviceName}"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "PUT Filter application events types.",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"filter\": \"value\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/applications/{applicationName}/eventFilter",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "applications",
+                "{applicationName}",
+                "eventFilter"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Asterisk",
+      "item": [
+        {
+          "name": "GET Retrieve a dynamic configuration object.",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/asterisk/config/dynamic/{configClass}/{objectType}/{id}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "asterisk",
+                "config",
+                "dynamic",
+                "{configClass}",
+                "{objectType}",
+                "{id}"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "PUT Create or update a dynamic configuration object.",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"fields\": \"value\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/asterisk/config/dynamic/{configClass}/{objectType}/{id}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "asterisk",
+                "config",
+                "dynamic",
+                "{configClass}",
+                "{objectType}",
+                "{id}"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "DELETE Delete a dynamic configuration object.",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/asterisk/config/dynamic/{configClass}/{objectType}/{id}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "asterisk",
+                "config",
+                "dynamic",
+                "{configClass}",
+                "{objectType}",
+                "{id}"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GET Gets Asterisk system information.",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/asterisk/info",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "asterisk",
+                "info"
+              ],
+              "query": [
+                {
+                  "key": "only",
+                  "value": "{{only}}",
+                  "description": "Filter information returned",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GET Response pong message.",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/asterisk/ping",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "asterisk",
+                "ping"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GET List Asterisk modules.",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/asterisk/modules",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "asterisk",
+                "modules"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GET Get Asterisk module information.",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/asterisk/modules/{moduleName}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "asterisk",
+                "modules",
+                "{moduleName}"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST Load an Asterisk module.",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"key\": \"value\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/asterisk/modules/{moduleName}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "asterisk",
+                "modules",
+                "{moduleName}"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "DELETE Unload an Asterisk module.",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/asterisk/modules/{moduleName}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "asterisk",
+                "modules",
+                "{moduleName}"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "PUT Reload an Asterisk module.",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"key\": \"value\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/asterisk/modules/{moduleName}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "asterisk",
+                "modules",
+                "{moduleName}"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GET Gets Asterisk log channel information.",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/asterisk/logging",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "asterisk",
+                "logging"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST Adds a log channel.",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"key\": \"value\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/asterisk/logging/{logChannelName}?configuration={{configuration}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "asterisk",
+                "logging",
+                "{logChannelName}"
+              ],
+              "query": [
+                {
+                  "key": "configuration",
+                  "value": "{{configuration}}",
+                  "description": "levels of the log channel"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "DELETE Deletes a log channel.",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/asterisk/logging/{logChannelName}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "asterisk",
+                "logging",
+                "{logChannelName}"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "PUT Rotates a log channel.",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"key\": \"value\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/asterisk/logging/{logChannelName}/rotate",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "asterisk",
+                "logging",
+                "{logChannelName}",
+                "rotate"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GET Get the value of a global variable.",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/asterisk/variable?variable={{variable}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "asterisk",
+                "variable"
+              ],
+              "query": [
+                {
+                  "key": "variable",
+                  "value": "{{variable}}",
+                  "description": "The variable to get"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST Set the value of a global variable.",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"key\": \"value\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/asterisk/variable?variable={{variable}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "asterisk",
+                "variable"
+              ],
+              "query": [
+                {
+                  "key": "variable",
+                  "value": "{{variable}}",
+                  "description": "The variable to set"
+                },
+                {
+                  "key": "value",
+                  "value": "{{value}}",
+                  "description": "The value to set the variable to",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Bridges",
+      "item": [
+        {
+          "name": "GET List all active bridges in Asterisk.",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/bridges",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "bridges"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST Create a new bridge.",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"variables\": \"value\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/bridges",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "bridges"
+              ],
+              "query": [
+                {
+                  "key": "type",
+                  "value": "{{type}}",
+                  "description": "Comma separated list of bridge type attributes (mixing, holding, dtmf_events, proxy_media, video_sfu, video_single, sdp_label).",
+                  "disabled": true
+                },
+                {
+                  "key": "bridgeId",
+                  "value": "{{bridgeId}}",
+                  "description": "Unique ID to give to the bridge being created.",
+                  "disabled": true
+                },
+                {
+                  "key": "name",
+                  "value": "{{name}}",
+                  "description": "Name to give to the bridge being created.",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST Create a new bridge.",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"variables\": \"value\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/bridges/{bridgeId}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "bridges",
+                "{bridgeId}"
+              ],
+              "query": [
+                {
+                  "key": "type",
+                  "value": "{{type}}",
+                  "description": "Comma separated list of bridge type attributes (mixing, holding, dtmf_events, proxy_media, video_sfu, video_single, sdp_label) to set.",
+                  "disabled": true
+                },
+                {
+                  "key": "name",
+                  "value": "{{name}}",
+                  "description": "Set the name of the bridge.",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GET Get bridge details.",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/bridges/{bridgeId}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "bridges",
+                "{bridgeId}"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "DELETE Shut down a bridge.",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/bridges/{bridgeId}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "bridges",
+                "{bridgeId}"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GET Get the value of a bridge variable or function.",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/bridges/{bridgeId}/variable?variable={{variable}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "bridges",
+                "{bridgeId}",
+                "variable"
+              ],
+              "query": [
+                {
+                  "key": "variable",
+                  "value": "{{variable}}",
+                  "description": "The bridge variable or function to get"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST Set the value of a bridge variable or function.",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"key\": \"value\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/bridges/{bridgeId}/variable?variable={{variable}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "bridges",
+                "{bridgeId}",
+                "variable"
+              ],
+              "query": [
+                {
+                  "key": "variable",
+                  "value": "{{variable}}",
+                  "description": "The bridge variable or function to set"
+                },
+                {
+                  "key": "value",
+                  "value": "{{value}}",
+                  "description": "The value to set the variable to",
+                  "disabled": true
+                },
+                {
+                  "key": "report_events",
+                  "value": "{{report_events}}",
+                  "description": "Whether this variable should be included in bridge events. Defaults to false.",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GET Get the value of multiple bridge variables or functions.",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/bridges/{bridgeId}/variables?variables={{variables}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "bridges",
+                "{bridgeId}",
+                "variables"
+              ],
+              "query": [
+                {
+                  "key": "variables",
+                  "value": "{{variables}}",
+                  "description": "The bridge variables or functions to get"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST Set the values of multiple bridge variables or functions.",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"variables\": \"value\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/bridges/{bridgeId}/variables",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "bridges",
+                "{bridgeId}",
+                "variables"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST Add a channel to a bridge.",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"key\": \"value\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/bridges/{bridgeId}/addChannel?channel={{channel}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "bridges",
+                "{bridgeId}",
+                "addChannel"
+              ],
+              "query": [
+                {
+                  "key": "channel",
+                  "value": "{{channel}}",
+                  "description": "Ids of channels to add to bridge"
+                },
+                {
+                  "key": "role",
+                  "value": "{{role}}",
+                  "description": "Channel's role in the bridge",
+                  "disabled": true
+                },
+                {
+                  "key": "absorbDTMF",
+                  "value": "{{absorbDTMF}}",
+                  "description": "Absorb DTMF coming from this channel, preventing it to pass through to the bridge",
+                  "disabled": true
+                },
+                {
+                  "key": "mute",
+                  "value": "{{mute}}",
+                  "description": "Mute audio from this channel, preventing it to pass through to the bridge",
+                  "disabled": true
+                },
+                {
+                  "key": "inhibitConnectedLineUpdates",
+                  "value": "{{inhibitConnectedLineUpdates}}",
+                  "description": "Do not present the identity of the newly connected channel to other bridge members",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST Remove a channel from a bridge.",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"key\": \"value\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/bridges/{bridgeId}/removeChannel?channel={{channel}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "bridges",
+                "{bridgeId}",
+                "removeChannel"
+              ],
+              "query": [
+                {
+                  "key": "channel",
+                  "value": "{{channel}}",
+                  "description": "Ids of channels to remove from bridge"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST Set a channel as the video source in a multi-party mixing bridge. This operation has no effect on bridges with two or fewer participants.",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"key\": \"value\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/bridges/{bridgeId}/videoSource/{channelId}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "bridges",
+                "{bridgeId}",
+                "videoSource",
+                "{channelId}"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "DELETE Removes any explicit video source in a multi-party mixing bridge. This operation has no effect on bridges with two or fewer participants. When no explicit video source is set, talk detection will be used to determine the active video stream.",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/bridges/{bridgeId}/videoSource",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "bridges",
+                "{bridgeId}",
+                "videoSource"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST Play music on hold to a bridge or change the MOH class that is playing.",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"key\": \"value\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/bridges/{bridgeId}/moh",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "bridges",
+                "{bridgeId}",
+                "moh"
+              ],
+              "query": [
+                {
+                  "key": "mohClass",
+                  "value": "{{mohClass}}",
+                  "description": "Channel's id",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "DELETE Stop playing music on hold to a bridge.",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/bridges/{bridgeId}/moh",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "bridges",
+                "{bridgeId}",
+                "moh"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST Start playback of media on a bridge.",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"key\": \"value\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/bridges/{bridgeId}/play?media={{media}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "bridges",
+                "{bridgeId}",
+                "play"
+              ],
+              "query": [
+                {
+                  "key": "media",
+                  "value": "{{media}}",
+                  "description": "Media URIs to play."
+                },
+                {
+                  "key": "announcer_format",
+                  "value": "{{announcer_format}}",
+                  "description": "Format of the 'Anouncer' channel attached to the bridge. Defaults to the format of the channel in the bridge with the highest sampe rate.",
+                  "disabled": true
+                },
+                {
+                  "key": "lang",
+                  "value": "{{lang}}",
+                  "description": "For sounds, selects language for sound.",
+                  "disabled": true
+                },
+                {
+                  "key": "offsetms",
+                  "value": "{{offsetms}}",
+                  "description": "Number of milliseconds to skip before playing. Only applies to the first URI if multiple media URIs are specified.",
+                  "disabled": true
+                },
+                {
+                  "key": "skipms",
+                  "value": "{{skipms}}",
+                  "description": "Number of milliseconds to skip for forward/reverse operations.",
+                  "disabled": true
+                },
+                {
+                  "key": "playbackId",
+                  "value": "{{playbackId}}",
+                  "description": "Playback Id.",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST Start playback of media on a bridge.",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"key\": \"value\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/bridges/{bridgeId}/play/{playbackId}?media={{media}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "bridges",
+                "{bridgeId}",
+                "play",
+                "{playbackId}"
+              ],
+              "query": [
+                {
+                  "key": "media",
+                  "value": "{{media}}",
+                  "description": "Media URIs to play."
+                },
+                {
+                  "key": "announcer_format",
+                  "value": "{{announcer_format}}",
+                  "description": "Format of the 'Anouncer' channel attached to the bridge. Defaults to the format of the channel in the bridge with the highest sampe rate.",
+                  "disabled": true
+                },
+                {
+                  "key": "lang",
+                  "value": "{{lang}}",
+                  "description": "For sounds, selects language for sound.",
+                  "disabled": true
+                },
+                {
+                  "key": "offsetms",
+                  "value": "{{offsetms}}",
+                  "description": "Number of milliseconds to skip before playing. Only applies to the first URI if multiple media URIs are specified.",
+                  "disabled": true
+                },
+                {
+                  "key": "skipms",
+                  "value": "{{skipms}}",
+                  "description": "Number of milliseconds to skip for forward/reverse operations.",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST Start a recording.",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"key\": \"value\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/bridges/{bridgeId}/record?name={{name}}&format={{format}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "bridges",
+                "{bridgeId}",
+                "record"
+              ],
+              "query": [
+                {
+                  "key": "name",
+                  "value": "{{name}}",
+                  "description": "Recording's filename"
+                },
+                {
+                  "key": "format",
+                  "value": "{{format}}",
+                  "description": "Format to encode audio in"
+                },
+                {
+                  "key": "recorder_format",
+                  "value": "{{recorder_format}}",
+                  "description": "Format of the 'Recorder' channel attached to the bridge. Defaults to the same format as the 'format' parameter.",
+                  "disabled": true
+                },
+                {
+                  "key": "maxDurationSeconds",
+                  "value": "{{maxDurationSeconds}}",
+                  "description": "Maximum duration of the recording, in seconds. 0 for no limit.",
+                  "disabled": true
+                },
+                {
+                  "key": "maxSilenceSeconds",
+                  "value": "{{maxSilenceSeconds}}",
+                  "description": "Maximum duration of silence, in seconds. 0 for no limit.",
+                  "disabled": true
+                },
+                {
+                  "key": "ifExists",
+                  "value": "{{ifExists}}",
+                  "description": "Action to take if a recording with the same name already exists.",
+                  "disabled": true
+                },
+                {
+                  "key": "beep",
+                  "value": "{{beep}}",
+                  "description": "Play beep when recording begins",
+                  "disabled": true
+                },
+                {
+                  "key": "terminateOn",
+                  "value": "{{terminateOn}}",
+                  "description": "DTMF input to terminate recording.",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Channels",
+      "item": [
+        {
+          "name": "GET List all active channels in Asterisk.",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/channels",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "channels"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST Create a new channel (originate).",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"variables\": \"value\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/channels?endpoint={{endpoint}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "channels"
+              ],
+              "query": [
+                {
+                  "key": "endpoint",
+                  "value": "{{endpoint}}",
+                  "description": "Endpoint to call."
+                },
+                {
+                  "key": "extension",
+                  "value": "{{extension}}",
+                  "description": "The extension to dial after the endpoint answers. Mutually exclusive with 'app'.",
+                  "disabled": true
+                },
+                {
+                  "key": "context",
+                  "value": "{{context}}",
+                  "description": "The context to dial after the endpoint answers. If omitted, uses 'default'. Mutually exclusive with 'app'.",
+                  "disabled": true
+                },
+                {
+                  "key": "priority",
+                  "value": "{{priority}}",
+                  "description": "The priority to dial after the endpoint answers. If omitted, uses 1. Mutually exclusive with 'app'.",
+                  "disabled": true
+                },
+                {
+                  "key": "label",
+                  "value": "{{label}}",
+                  "description": "The label to dial after the endpoint answers. Will supersede 'priority' if provided. Mutually exclusive with 'app'.",
+                  "disabled": true
+                },
+                {
+                  "key": "app",
+                  "value": "{{app}}",
+                  "description": "The application that is subscribed to the originated channel. When the channel is answered, it will be passed to this Stasis application. Mutually exclusive with 'context', 'extension', 'priority', and 'label'.",
+                  "disabled": true
+                },
+                {
+                  "key": "appArgs",
+                  "value": "{{appArgs}}",
+                  "description": "The application arguments to pass to the Stasis application provided by 'app'. Mutually exclusive with 'context', 'extension', 'priority', and 'label'.",
+                  "disabled": true
+                },
+                {
+                  "key": "callerId",
+                  "value": "{{callerId}}",
+                  "description": "CallerID to use when dialing the endpoint or extension.",
+                  "disabled": true
+                },
+                {
+                  "key": "timeout",
+                  "value": "{{timeout}}",
+                  "description": "Timeout (in seconds) before giving up dialing, or -1 for no timeout.",
+                  "disabled": true
+                },
+                {
+                  "key": "channelId",
+                  "value": "{{channelId}}",
+                  "description": "The unique id to assign the channel on creation.",
+                  "disabled": true
+                },
+                {
+                  "key": "otherChannelId",
+                  "value": "{{otherChannelId}}",
+                  "description": "The unique id to assign the second channel when using local channels.",
+                  "disabled": true
+                },
+                {
+                  "key": "originator",
+                  "value": "{{originator}}",
+                  "description": "The unique id of the channel which is originating this one.",
+                  "disabled": true
+                },
+                {
+                  "key": "formats",
+                  "value": "{{formats}}",
+                  "description": "The format name capability list to use if originator is not specified. Ex. \"ulaw,slin16\".  Format names can be found with \"core show codecs\".",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST Create channel.",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"variables\": \"value\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/channels/create?endpoint={{endpoint}}&app={{app}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "channels",
+                "create"
+              ],
+              "query": [
+                {
+                  "key": "endpoint",
+                  "value": "{{endpoint}}",
+                  "description": "Endpoint for channel communication"
+                },
+                {
+                  "key": "app",
+                  "value": "{{app}}",
+                  "description": "Stasis Application to place channel into"
+                },
+                {
+                  "key": "appArgs",
+                  "value": "{{appArgs}}",
+                  "description": "The application arguments to pass to the Stasis application provided by 'app'. Mutually exclusive with 'context', 'extension', 'priority', and 'label'.",
+                  "disabled": true
+                },
+                {
+                  "key": "channelId",
+                  "value": "{{channelId}}",
+                  "description": "The unique id to assign the channel on creation.",
+                  "disabled": true
+                },
+                {
+                  "key": "otherChannelId",
+                  "value": "{{otherChannelId}}",
+                  "description": "The unique id to assign the second channel when using local channels.",
+                  "disabled": true
+                },
+                {
+                  "key": "originator",
+                  "value": "{{originator}}",
+                  "description": "Unique ID of the calling channel",
+                  "disabled": true
+                },
+                {
+                  "key": "formats",
+                  "value": "{{formats}}",
+                  "description": "The format name capability list to use if originator is not specified. Ex. \"ulaw,slin16\".  Format names can be found with \"core show codecs\".",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GET Channel details.",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/channels/{channelId}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "channels",
+                "{channelId}"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST Create a new channel (originate with id).",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"variables\": \"value\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/channels/{channelId}?endpoint={{endpoint}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "channels",
+                "{channelId}"
+              ],
+              "query": [
+                {
+                  "key": "endpoint",
+                  "value": "{{endpoint}}",
+                  "description": "Endpoint to call."
+                },
+                {
+                  "key": "extension",
+                  "value": "{{extension}}",
+                  "description": "The extension to dial after the endpoint answers. Mutually exclusive with 'app'.",
+                  "disabled": true
+                },
+                {
+                  "key": "context",
+                  "value": "{{context}}",
+                  "description": "The context to dial after the endpoint answers. If omitted, uses 'default'. Mutually exclusive with 'app'.",
+                  "disabled": true
+                },
+                {
+                  "key": "priority",
+                  "value": "{{priority}}",
+                  "description": "The priority to dial after the endpoint answers. If omitted, uses 1. Mutually exclusive with 'app'.",
+                  "disabled": true
+                },
+                {
+                  "key": "label",
+                  "value": "{{label}}",
+                  "description": "The label to dial after the endpoint answers. Will supersede 'priority' if provided. Mutually exclusive with 'app'.",
+                  "disabled": true
+                },
+                {
+                  "key": "app",
+                  "value": "{{app}}",
+                  "description": "The application that is subscribed to the originated channel. When the channel is answered, it will be passed to this Stasis application. Mutually exclusive with 'context', 'extension', 'priority', and 'label'.",
+                  "disabled": true
+                },
+                {
+                  "key": "appArgs",
+                  "value": "{{appArgs}}",
+                  "description": "The application arguments to pass to the Stasis application provided by 'app'. Mutually exclusive with 'context', 'extension', 'priority', and 'label'.",
+                  "disabled": true
+                },
+                {
+                  "key": "callerId",
+                  "value": "{{callerId}}",
+                  "description": "CallerID to use when dialing the endpoint or extension.",
+                  "disabled": true
+                },
+                {
+                  "key": "timeout",
+                  "value": "{{timeout}}",
+                  "description": "Timeout (in seconds) before giving up dialing, or -1 for no timeout.",
+                  "disabled": true
+                },
+                {
+                  "key": "otherChannelId",
+                  "value": "{{otherChannelId}}",
+                  "description": "The unique id to assign the second channel when using local channels.",
+                  "disabled": true
+                },
+                {
+                  "key": "originator",
+                  "value": "{{originator}}",
+                  "description": "The unique id of the channel which is originating this one.",
+                  "disabled": true
+                },
+                {
+                  "key": "formats",
+                  "value": "{{formats}}",
+                  "description": "The format name capability list to use if originator is not specified. Ex. \"ulaw,slin16\".  Format names can be found with \"core show codecs\".",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "DELETE Delete (i.e. hangup) a channel.",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/channels/{channelId}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "channels",
+                "{channelId}"
+              ],
+              "query": [
+                {
+                  "key": "reason_code",
+                  "value": "{{reason_code}}",
+                  "description": "The reason code for hanging up the channel for detail use. Mutually exclusive with 'reason'. See detail hangup codes at here. https://docs.asterisk.org/Configuration/Miscellaneous/Hangup-Cause-Mappings/",
+                  "disabled": true
+                },
+                {
+                  "key": "reason",
+                  "value": "{{reason}}",
+                  "description": "Reason for hanging up the channel for simple use. Mutually exclusive with 'reason_code'.",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST Exit application; continue execution in the dialplan.",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"key\": \"value\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/channels/{channelId}/continue",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "channels",
+                "{channelId}",
+                "continue"
+              ],
+              "query": [
+                {
+                  "key": "context",
+                  "value": "{{context}}",
+                  "description": "The context to continue to.",
+                  "disabled": true
+                },
+                {
+                  "key": "extension",
+                  "value": "{{extension}}",
+                  "description": "The extension to continue to.",
+                  "disabled": true
+                },
+                {
+                  "key": "priority",
+                  "value": "{{priority}}",
+                  "description": "The priority to continue to.",
+                  "disabled": true
+                },
+                {
+                  "key": "label",
+                  "value": "{{label}}",
+                  "description": "The label to continue to - will supersede 'priority' if both are provided.",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST Move the channel from one Stasis application to another.",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"key\": \"value\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/channels/{channelId}/move?app={{app}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "channels",
+                "{channelId}",
+                "move"
+              ],
+              "query": [
+                {
+                  "key": "app",
+                  "value": "{{app}}",
+                  "description": "The channel will be passed to this Stasis application."
+                },
+                {
+                  "key": "appArgs",
+                  "value": "{{appArgs}}",
+                  "description": "The application arguments to pass to the Stasis application provided by 'app'.",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST Redirect the channel to a different location.",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"key\": \"value\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/channels/{channelId}/redirect?endpoint={{endpoint}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "channels",
+                "{channelId}",
+                "redirect"
+              ],
+              "query": [
+                {
+                  "key": "endpoint",
+                  "value": "{{endpoint}}",
+                  "description": "The endpoint to redirect the channel to"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST Answer a channel.",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"key\": \"value\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/channels/{channelId}/answer",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "channels",
+                "{channelId}",
+                "answer"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST Indicate ringing to a channel.",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"key\": \"value\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/channels/{channelId}/ring",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "channels",
+                "{channelId}",
+                "ring"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "DELETE Stop ringing indication on a channel if locally generated.",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/channels/{channelId}/ring",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "channels",
+                "{channelId}",
+                "ring"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST Indicate progress on a channel.",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"key\": \"value\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/channels/{channelId}/progress",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "channels",
+                "{channelId}",
+                "progress"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST Send provided DTMF to a given channel.",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"key\": \"value\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/channels/{channelId}/dtmf",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "channels",
+                "{channelId}",
+                "dtmf"
+              ],
+              "query": [
+                {
+                  "key": "dtmf",
+                  "value": "{{dtmf}}",
+                  "description": "DTMF To send.",
+                  "disabled": true
+                },
+                {
+                  "key": "before",
+                  "value": "{{before}}",
+                  "description": "Amount of time to wait before DTMF digits (specified in milliseconds) start.",
+                  "disabled": true
+                },
+                {
+                  "key": "between",
+                  "value": "{{between}}",
+                  "description": "Amount of time in between DTMF digits (specified in milliseconds).",
+                  "disabled": true
+                },
+                {
+                  "key": "duration",
+                  "value": "{{duration}}",
+                  "description": "Length of each DTMF digit (specified in milliseconds).",
+                  "disabled": true
+                },
+                {
+                  "key": "after",
+                  "value": "{{after}}",
+                  "description": "Amount of time to wait after DTMF digits (specified in milliseconds) end.",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST Mute a channel.",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"key\": \"value\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/channels/{channelId}/mute",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "channels",
+                "{channelId}",
+                "mute"
+              ],
+              "query": [
+                {
+                  "key": "direction",
+                  "value": "{{direction}}",
+                  "description": "Direction in which to mute audio",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "DELETE Unmute a channel.",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/channels/{channelId}/mute",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "channels",
+                "{channelId}",
+                "mute"
+              ],
+              "query": [
+                {
+                  "key": "direction",
+                  "value": "{{direction}}",
+                  "description": "Direction in which to unmute audio",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST Hold a channel.",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"key\": \"value\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/channels/{channelId}/hold",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "channels",
+                "{channelId}",
+                "hold"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "DELETE Remove a channel from hold.",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/channels/{channelId}/hold",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "channels",
+                "{channelId}",
+                "hold"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST Play music on hold to a channel.",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"key\": \"value\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/channels/{channelId}/moh",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "channels",
+                "{channelId}",
+                "moh"
+              ],
+              "query": [
+                {
+                  "key": "mohClass",
+                  "value": "{{mohClass}}",
+                  "description": "Music on hold class to use",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "DELETE Stop playing music on hold to a channel.",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/channels/{channelId}/moh",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "channels",
+                "{channelId}",
+                "moh"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST Play silence to a channel.",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"key\": \"value\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/channels/{channelId}/silence",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "channels",
+                "{channelId}",
+                "silence"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "DELETE Stop playing silence to a channel.",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/channels/{channelId}/silence",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "channels",
+                "{channelId}",
+                "silence"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST Start playback of media.",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"key\": \"value\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/channels/{channelId}/play?media={{media}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "channels",
+                "{channelId}",
+                "play"
+              ],
+              "query": [
+                {
+                  "key": "media",
+                  "value": "{{media}}",
+                  "description": "Media URIs to play."
+                },
+                {
+                  "key": "lang",
+                  "value": "{{lang}}",
+                  "description": "For sounds, selects language for sound.",
+                  "disabled": true
+                },
+                {
+                  "key": "offsetms",
+                  "value": "{{offsetms}}",
+                  "description": "Number of milliseconds to skip before playing. Only applies to the first URI if multiple media URIs are specified.",
+                  "disabled": true
+                },
+                {
+                  "key": "skipms",
+                  "value": "{{skipms}}",
+                  "description": "Number of milliseconds to skip for forward/reverse operations.",
+                  "disabled": true
+                },
+                {
+                  "key": "playbackId",
+                  "value": "{{playbackId}}",
+                  "description": "Playback ID.",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST Start playback of media and specify the playbackId.",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"key\": \"value\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/channels/{channelId}/play/{playbackId}?media={{media}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "channels",
+                "{channelId}",
+                "play",
+                "{playbackId}"
+              ],
+              "query": [
+                {
+                  "key": "media",
+                  "value": "{{media}}",
+                  "description": "Media URIs to play."
+                },
+                {
+                  "key": "lang",
+                  "value": "{{lang}}",
+                  "description": "For sounds, selects language for sound.",
+                  "disabled": true
+                },
+                {
+                  "key": "offsetms",
+                  "value": "{{offsetms}}",
+                  "description": "Number of milliseconds to skip before playing. Only applies to the first URI if multiple media URIs are specified.",
+                  "disabled": true
+                },
+                {
+                  "key": "skipms",
+                  "value": "{{skipms}}",
+                  "description": "Number of milliseconds to skip for forward/reverse operations.",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST Start a recording.",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"key\": \"value\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/channels/{channelId}/record?name={{name}}&format={{format}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "channels",
+                "{channelId}",
+                "record"
+              ],
+              "query": [
+                {
+                  "key": "name",
+                  "value": "{{name}}",
+                  "description": "Recording's filename"
+                },
+                {
+                  "key": "format",
+                  "value": "{{format}}",
+                  "description": "Format to encode audio in"
+                },
+                {
+                  "key": "maxDurationSeconds",
+                  "value": "{{maxDurationSeconds}}",
+                  "description": "Maximum duration of the recording, in seconds. 0 for no limit",
+                  "disabled": true
+                },
+                {
+                  "key": "maxSilenceSeconds",
+                  "value": "{{maxSilenceSeconds}}",
+                  "description": "Maximum duration of silence, in seconds. 0 for no limit",
+                  "disabled": true
+                },
+                {
+                  "key": "ifExists",
+                  "value": "{{ifExists}}",
+                  "description": "Action to take if a recording with the same name already exists.",
+                  "disabled": true
+                },
+                {
+                  "key": "beep",
+                  "value": "{{beep}}",
+                  "description": "Play beep when recording begins",
+                  "disabled": true
+                },
+                {
+                  "key": "terminateOn",
+                  "value": "{{terminateOn}}",
+                  "description": "DTMF input to terminate recording",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GET Get the value of a channel variable or function.",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/channels/{channelId}/variable?variable={{variable}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "channels",
+                "{channelId}",
+                "variable"
+              ],
+              "query": [
+                {
+                  "key": "variable",
+                  "value": "{{variable}}",
+                  "description": "The channel variable or function to get"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST Set the value of a channel variable or function.",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"key\": \"value\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/channels/{channelId}/variable?variable={{variable}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "channels",
+                "{channelId}",
+                "variable"
+              ],
+              "query": [
+                {
+                  "key": "variable",
+                  "value": "{{variable}}",
+                  "description": "The channel variable or function to set"
+                },
+                {
+                  "key": "value",
+                  "value": "{{value}}",
+                  "description": "The value to set the variable to",
+                  "disabled": true
+                },
+                {
+                  "key": "report_events",
+                  "value": "{{report_events}}",
+                  "description": "Whether this variable should be included in channel events. Defaults to false.",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GET Get the value of multiple channel variables or functions.",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/channels/{channelId}/variables?variables={{variables}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "channels",
+                "{channelId}",
+                "variables"
+              ],
+              "query": [
+                {
+                  "key": "variables",
+                  "value": "{{variables}}",
+                  "description": "The channel variables or functions to get"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST Set the values of multiple channel variables or functions.",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"variables\": \"value\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/channels/{channelId}/variables",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "channels",
+                "{channelId}",
+                "variables"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST Start snooping.",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"key\": \"value\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/channels/{channelId}/snoop?app={{app}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "channels",
+                "{channelId}",
+                "snoop"
+              ],
+              "query": [
+                {
+                  "key": "spy",
+                  "value": "{{spy}}",
+                  "description": "Direction of audio to spy on",
+                  "disabled": true
+                },
+                {
+                  "key": "whisper",
+                  "value": "{{whisper}}",
+                  "description": "Direction of audio to whisper into",
+                  "disabled": true
+                },
+                {
+                  "key": "app",
+                  "value": "{{app}}",
+                  "description": "Application the snooping channel is placed into"
+                },
+                {
+                  "key": "appArgs",
+                  "value": "{{appArgs}}",
+                  "description": "The application arguments to pass to the Stasis application",
+                  "disabled": true
+                },
+                {
+                  "key": "snoopId",
+                  "value": "{{snoopId}}",
+                  "description": "Unique ID to assign to snooping channel",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST Start snooping.",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"key\": \"value\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/channels/{channelId}/snoop/{snoopId}?app={{app}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "channels",
+                "{channelId}",
+                "snoop",
+                "{snoopId}"
+              ],
+              "query": [
+                {
+                  "key": "spy",
+                  "value": "{{spy}}",
+                  "description": "Direction of audio to spy on",
+                  "disabled": true
+                },
+                {
+                  "key": "whisper",
+                  "value": "{{whisper}}",
+                  "description": "Direction of audio to whisper into",
+                  "disabled": true
+                },
+                {
+                  "key": "app",
+                  "value": "{{app}}",
+                  "description": "Application the snooping channel is placed into"
+                },
+                {
+                  "key": "appArgs",
+                  "value": "{{appArgs}}",
+                  "description": "The application arguments to pass to the Stasis application",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST Dial a created channel.",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"key\": \"value\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/channels/{channelId}/dial",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "channels",
+                "{channelId}",
+                "dial"
+              ],
+              "query": [
+                {
+                  "key": "caller",
+                  "value": "{{caller}}",
+                  "description": "Channel ID of caller",
+                  "disabled": true
+                },
+                {
+                  "key": "timeout",
+                  "value": "{{timeout}}",
+                  "description": "Dial timeout",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GET RTP stats on a channel.",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/channels/{channelId}/rtp_statistics",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "channels",
+                "{channelId}",
+                "rtp_statistics"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST Start an External Media session.",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"variables\": \"value\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/channels/externalMedia?app={{app}}&format={{format}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "channels",
+                "externalMedia"
+              ],
+              "query": [
+                {
+                  "key": "channelId",
+                  "value": "{{channelId}}",
+                  "description": "The unique id to assign the channel on creation.",
+                  "disabled": true
+                },
+                {
+                  "key": "app",
+                  "value": "{{app}}",
+                  "description": "Stasis Application to place channel into"
+                },
+                {
+                  "key": "external_host",
+                  "value": "{{external_host}}",
+                  "description": "Hostname/ip:port or websocket_client connection ID of external host.  May be empty for a websocket server connection.",
+                  "disabled": true
+                },
+                {
+                  "key": "encapsulation",
+                  "value": "{{encapsulation}}",
+                  "description": "Payload encapsulation protocol.  Must be 'none' for the websocket transport.",
+                  "disabled": true
+                },
+                {
+                  "key": "transport",
+                  "value": "{{transport}}",
+                  "description": "Transport protocol",
+                  "disabled": true
+                },
+                {
+                  "key": "connection_type",
+                  "value": "{{connection_type}}",
+                  "description": "Connection type (client/server). 'server' is only valid for the websocket transport.",
+                  "disabled": true
+                },
+                {
+                  "key": "format",
+                  "value": "{{format}}",
+                  "description": "Format to encode audio in"
+                },
+                {
+                  "key": "direction",
+                  "value": "{{direction}}",
+                  "description": "External media direction",
+                  "disabled": true
+                },
+                {
+                  "key": "data",
+                  "value": "{{data}}",
+                  "description": "An arbitrary data field",
+                  "disabled": true
+                },
+                {
+                  "key": "transport_data",
+                  "value": "{{transport_data}}",
+                  "description": "Transport-specific data. For websocket this is appended to the dialstring.",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST Inform the channel about the progress of the attended/blind transfer.",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"key\": \"value\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/channels/{channelId}/transfer_progress?states={{states}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "channels",
+                "{channelId}",
+                "transfer_progress"
+              ],
+              "query": [
+                {
+                  "key": "states",
+                  "value": "{{states}}",
+                  "description": "The state of the progress"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Devicestates",
+      "item": [
+        {
+          "name": "GET List all ARI controlled device states.",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/deviceStates",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "deviceStates"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GET Retrieve the current state of a device.",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/deviceStates/{deviceName}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "deviceStates",
+                "{deviceName}"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "PUT Change the state of a device controlled by ARI. (Note - implicitly creates the device state).",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"key\": \"value\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/deviceStates/{deviceName}?deviceState={{deviceState}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "deviceStates",
+                "{deviceName}"
+              ],
+              "query": [
+                {
+                  "key": "deviceState",
+                  "value": "{{deviceState}}",
+                  "description": "Device state value"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "DELETE Destroy a device-state controlled by ARI.",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/deviceStates/{deviceName}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "deviceStates",
+                "{deviceName}"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Endpoints",
+      "item": [
+        {
+          "name": "GET List all endpoints.",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/endpoints",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "endpoints"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "PUT Send a message to some technology URI or endpoint.",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"variables\": \"value\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/endpoints/sendMessage?to={{to}}&from={{from}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "endpoints",
+                "sendMessage"
+              ],
+              "query": [
+                {
+                  "key": "to",
+                  "value": "{{to}}",
+                  "description": "The endpoint resource or technology specific URI to send the message to. Valid resources are pjsip, and xmpp."
+                },
+                {
+                  "key": "from",
+                  "value": "{{from}}",
+                  "description": "The endpoint resource or technology specific identity to send this message from. Valid resources are pjsip, and xmpp."
+                },
+                {
+                  "key": "body",
+                  "value": "{{body}}",
+                  "description": "The body of the message",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST Refer an endpoint or technology URI to some technology URI or endpoint.",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"variables\": \"value\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/endpoints/refer?to={{to}}&from={{from}}&refer_to={{refer_to}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "endpoints",
+                "refer"
+              ],
+              "query": [
+                {
+                  "key": "to",
+                  "value": "{{to}}",
+                  "description": "The endpoint resource or technology specific URI that should be referred to somewhere. Valid resource is pjsip."
+                },
+                {
+                  "key": "from",
+                  "value": "{{from}}",
+                  "description": "The endpoint resource or technology specific identity to refer from."
+                },
+                {
+                  "key": "refer_to",
+                  "value": "{{refer_to}}",
+                  "description": "The endpoint resource or technology specific URI to refer to."
+                },
+                {
+                  "key": "to_self",
+                  "value": "{{to_self}}",
+                  "description": "If true and \"refer_to\" refers to an Asterisk endpoint, the \"refer_to\" value is set to point to this Asterisk endpoint - so the referee is referred to Asterisk. Otherwise, use the contact URI associated with the endpoint.",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GET List available endoints for a given endpoint technology.",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/endpoints/{tech}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "endpoints",
+                "{tech}"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GET Details for an endpoint.",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/endpoints/{tech}/{resource}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "endpoints",
+                "{tech}",
+                "{resource}"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "PUT Send a message to some endpoint in a technology.",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"variables\": \"value\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/endpoints/{tech}/{resource}/sendMessage?from={{from}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "endpoints",
+                "{tech}",
+                "{resource}",
+                "sendMessage"
+              ],
+              "query": [
+                {
+                  "key": "from",
+                  "value": "{{from}}",
+                  "description": "The endpoint resource or technology specific identity to send this message from. Valid resources are pjsip and xmpp."
+                },
+                {
+                  "key": "body",
+                  "value": "{{body}}",
+                  "description": "The body of the message",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST Refer an endpoint or technology URI to some technology URI or endpoint.",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"variables\": \"value\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/endpoints/{tech}/{resource}/refer?from={{from}}&refer_to={{refer_to}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "endpoints",
+                "{tech}",
+                "{resource}",
+                "refer"
+              ],
+              "query": [
+                {
+                  "key": "from",
+                  "value": "{{from}}",
+                  "description": "The endpoint resource or technology specific identity to refer from."
+                },
+                {
+                  "key": "refer_to",
+                  "value": "{{refer_to}}",
+                  "description": "The endpoint resource or technology specific URI to refer to."
+                },
+                {
+                  "key": "to_self",
+                  "value": "{{to_self}}",
+                  "description": "If true and \"refer_to\" refers to an Asterisk endpoint, the \"refer_to\" value is set to point to this Asterisk endpoint - so the referee is referred to Asterisk. Otherwise, use the contact URI associated with the endpoint.",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Events",
+      "item": [
+        {
+          "name": "GET WebSocket connection for events.",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/events?app={{app}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "events"
+              ],
+              "query": [
+                {
+                  "key": "app",
+                  "value": "{{app}}",
+                  "description": "Applications to subscribe to."
+                },
+                {
+                  "key": "subscribeAll",
+                  "value": "{{subscribeAll}}",
+                  "description": "Subscribe to all Asterisk events. If provided, the applications listed will be subscribed to all events, effectively disabling the application specific subscriptions. Default is 'false'.",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST Generate a user event.",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"variables\": \"value\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/events/user/{eventName}?application={{application}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "events",
+                "user",
+                "{eventName}"
+              ],
+              "query": [
+                {
+                  "key": "application",
+                  "value": "{{application}}",
+                  "description": "The name of the application that will receive this event"
+                },
+                {
+                  "key": "source",
+                  "value": "{{source}}",
+                  "description": "URI for event source (channel:{channelId}, bridge:{bridgeId}, endpoint:{tech}/{resource}, deviceState:{deviceName}",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST Claim a broadcast channel for this application.",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"key\": \"value\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/events/claim?channelId={{channelId}}&application={{application}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "events",
+                "claim"
+              ],
+              "query": [
+                {
+                  "key": "channelId",
+                  "value": "{{channelId}}",
+                  "description": "The ID of the channel to claim"
+                },
+                {
+                  "key": "application",
+                  "value": "{{application}}",
+                  "description": "The name of the application claiming the channel"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Mailboxes",
+      "item": [
+        {
+          "name": "GET List all mailboxes.",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/mailboxes",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "mailboxes"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GET Retrieve the current state of a mailbox.",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/mailboxes/{mailboxName}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "mailboxes",
+                "{mailboxName}"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "PUT Change the state of a mailbox. (Note - implicitly creates the mailbox).",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"key\": \"value\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/mailboxes/{mailboxName}?oldMessages={{oldMessages}}&newMessages={{newMessages}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "mailboxes",
+                "{mailboxName}"
+              ],
+              "query": [
+                {
+                  "key": "oldMessages",
+                  "value": "{{oldMessages}}",
+                  "description": "Count of old messages in the mailbox"
+                },
+                {
+                  "key": "newMessages",
+                  "value": "{{newMessages}}",
+                  "description": "Count of new messages in the mailbox"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "DELETE Destroy a mailbox.",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/mailboxes/{mailboxName}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "mailboxes",
+                "{mailboxName}"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Playbacks",
+      "item": [
+        {
+          "name": "GET Get a playback's details.",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/playbacks/{playbackId}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "playbacks",
+                "{playbackId}"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "DELETE Stop a playback.",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/playbacks/{playbackId}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "playbacks",
+                "{playbackId}"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST Control a playback.",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"key\": \"value\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/playbacks/{playbackId}/control?operation={{operation}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "playbacks",
+                "{playbackId}",
+                "control"
+              ],
+              "query": [
+                {
+                  "key": "operation",
+                  "value": "{{operation}}",
+                  "description": "Operation to perform on the playback."
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Recordings",
+      "item": [
+        {
+          "name": "GET List recordings that are complete.",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/recordings/stored",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "recordings",
+                "stored"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GET Get a stored recording's details.",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/recordings/stored/{recordingName}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "recordings",
+                "stored",
+                "{recordingName}"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "DELETE Delete a stored recording.",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/recordings/stored/{recordingName}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "recordings",
+                "stored",
+                "{recordingName}"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GET Get the file associated with the stored recording.",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/recordings/stored/{recordingName}/file",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "recordings",
+                "stored",
+                "{recordingName}",
+                "file"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST Copy a stored recording.",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"key\": \"value\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/recordings/stored/{recordingName}/copy?destinationRecordingName={{destinationRecordingName}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "recordings",
+                "stored",
+                "{recordingName}",
+                "copy"
+              ],
+              "query": [
+                {
+                  "key": "destinationRecordingName",
+                  "value": "{{destinationRecordingName}}",
+                  "description": "The destination name of the recording"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GET List live recordings.",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/recordings/live/{recordingName}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "recordings",
+                "live",
+                "{recordingName}"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "DELETE Stop a live recording and discard it.",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/recordings/live/{recordingName}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "recordings",
+                "live",
+                "{recordingName}"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST Stop a live recording and store it.",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"key\": \"value\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/recordings/live/{recordingName}/stop",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "recordings",
+                "live",
+                "{recordingName}",
+                "stop"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST Pause a live recording.",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"key\": \"value\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/recordings/live/{recordingName}/pause",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "recordings",
+                "live",
+                "{recordingName}",
+                "pause"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "DELETE Unpause a live recording.",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/recordings/live/{recordingName}/pause",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "recordings",
+                "live",
+                "{recordingName}",
+                "pause"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST Mute a live recording.",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"key\": \"value\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/recordings/live/{recordingName}/mute",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "recordings",
+                "live",
+                "{recordingName}",
+                "mute"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "DELETE Unmute a live recording.",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/recordings/live/{recordingName}/mute",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "recordings",
+                "live",
+                "{recordingName}",
+                "mute"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Sounds",
+      "item": [
+        {
+          "name": "GET List all sounds.",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/sounds",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "sounds"
+              ],
+              "query": [
+                {
+                  "key": "lang",
+                  "value": "{{lang}}",
+                  "description": "Lookup sound for a specific language.",
+                  "disabled": true
+                },
+                {
+                  "key": "format",
+                  "value": "{{format}}",
+                  "description": "Lookup sound in a specific format.",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "GET Get a sound's details.",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/sounds/{soundId}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "sounds",
+                "{soundId}"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ],
+  "auth": {
+    "type": "basic",
+    "basic": [
+      {
+        "key": "username",
+        "value": "asterisk",
+        "type": "string"
+      },
+      {
+        "key": "password",
+        "value": "password",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:8088/ari"
+    }
+  ]
+}
